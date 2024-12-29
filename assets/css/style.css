@@ -1,0 +1,243 @@
+/* Reset body margin and padding */
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 15px;
+    line-height: 2em;
+    color: #333;
+    font-weight: 400;
+    background: #fff;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    overflow-x: hidden; /* Prevent horizontal scroll if any */
+}
+
+/* Ensure the main wrapper takes the full width and height of the page */
+#main-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    width: 100vw; /* Ensure the header takes up the full width of the viewport */
+    overflow: hidden;
+}
+
+.header .profile-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/IMG_20211026_165052.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header .content {
+    position: absolute;
+    bottom: 20px; /* Adjust distance from bottom */
+    left: 50%; /* Move it horizontally to the center */
+    transform: translateX(-50%); /* Corrects horizontal offset */
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+
+/* Header title */
+.header .content h1 {
+    font-size: 36px;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Paragraph below title */
+.header .content p {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Social icons styling */
+.header .content .social-icon {
+    margin: 20px 0 0 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.header .content .social-icon li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.header .content .social-icon li a {
+    font-size: 25px;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 100%; /* Rounded circle for the icon */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.header .content .social-icon li a:hover {
+    background-color: #fff; /* Background change on hover */
+    color: #333; /* Icon color change on hover */
+}
+
+/* Reset the default nav styling */
+nav {
+    position: absolute; /* Positioning it on top of the header */
+    top: 10px; /* Distance from the top */
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensures the nav is above the background image */
+    text-align: center;
+    padding: 0 20px;
+    display: block;}
+
+nav ul {
+    list-style-type: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: left; /* Center the nav items */
+}
+
+nav ul li {
+    margin: 0 15px; /* Space out the nav items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff; /* White color for the nav text */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Light hover effect */
+    color: #fff; /* Make sure text stays white on hover */
+}
+
+nav ul li a.active {
+    background-color: #fff; /* Highlight the active link */
+    color: #333; /* Change text color of active link */
+}
+
+/* About Section */
+#about {
+    background-color: black;
+    padding: 50px 0;
+    color: white;
+    margin-right: 0; /* Ensure no right margin */
+}
+/* Timeline container */
+.timeline-item {
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Circle */
+.timeline-item::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: -40px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.5); /* Grow the circle */
+    background-color: #00bcd4; /* Change color when hovering */
+}
+
+/* Box for each item */
+.timeline-item .content-box {
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Line connecting circles */
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+    width: 100%;
+}
+
+/* Timeline Header */
+h2.text-center {
+    margin-bottom: 30px;
+}
+
+/* For centering timeline items and adding space between them */
+.timeline-item h3 {
+    margin-bottom: 10px;
+}
+
+/* Add hover effect for the entire timeline item */
+.timeline-item:hover .content-box {
+    background-color: #444; /* Slightly lighter background on hover */
+}
+
+/* Additional styling to ensure better visual presentation */
+.timeline-item .content-box h4 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.timeline-item .content-box p {
+    margin: 10px 0;
+}
+
+/* Styling for mobile responsiveness */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-item::before {
+        left: 0;
+        margin-bottom: 20px;
+    }
+
+    .timeline-item .content-box {
+        width: 100%;
+    }
+}
